@@ -1,0 +1,14 @@
+# large raw downloads and intermediate files (fetched or rebuilt by the scripts)
+raw_data/
+*.zip
+*.part
+# Python and OS caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/
+# office documents
+*.docx
+~$*

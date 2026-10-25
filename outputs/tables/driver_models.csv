@@ -1,0 +1,25 @@
+response,term,sd_of_predictor,estimate_per_sd,ci_low,ci_high,p,n_sites,n_obs
+cover_total,sal_gs_mean_w,2.518,-1.036,-1.45,-0.6229,9.004e-07,302,4894
+cover_total,sal_gs_mean_b,5.057,-5.857,-7.964,-3.75,5.108e-08,302,4894
+cover_total,flood_gs_pct_w,18.56,-1.534,-1.95,-1.118,4.938e-13,302,4894
+cover_total,flood_gs_pct_b,19.16,-4.561,-5.841,-3.281,2.885e-12,302,4894
+richness_plot,sal_gs_mean_w,2.518,-0.1336,-0.1689,-0.09828,1.227e-13,302,4930
+richness_plot,sal_gs_mean_b,5.057,-0.8417,-1.14,-0.5437,3.083e-08,302,4930
+richness_plot,flood_gs_pct_w,18.56,-0.1682,-0.2035,-0.1328,1.039e-20,302,4930
+richness_plot,flood_gs_pct_b,19.16,-0.9335,-1.114,-0.7525,5.061e-24,302,4930
+halo_share,sal_gs_mean_w,2.518,0.009555,0.006991,0.01212,2.79e-13,302,4871
+halo_share,sal_gs_mean_b,5.057,0.1067,0.08234,0.131,8.131e-18,302,4871
+halo_share,flood_gs_pct_w,18.56,0.003167,0.0005959,0.005738,0.01577,302,4871
+halo_share,flood_gs_pct_b,19.16,0.009752,-0.005022,0.02452,0.1957,302,4871
+ndvi_gs_mean,sal_gs_mean_w,2.518,-0.01024,-0.01173,-0.00875,2.021e-41,288,4317
+ndvi_gs_mean,sal_gs_mean_b,5.057,-0.0575,-0.0731,-0.04189,5.118e-13,288,4317
+ndvi_gs_mean,flood_gs_pct_w,18.56,-0.005579,-0.007073,-0.004084,2.554e-13,288,4317
+ndvi_gs_mean,flood_gs_pct_b,19.16,-0.01894,-0.02826,-0.009613,6.869e-05,288,4317
+cover_total [Freshwater],sal_gs_mean_w (per unit: ppt or % time),,-0.02099,-0.9535,0.9115,0.9648,46,678
+cover_total [Freshwater],flood_gs_pct_w (per unit: ppt or % time),,-0.08892,-0.1418,-0.03604,0.000981,46,678
+cover_total [Intermediate],sal_gs_mean_w (per unit: ppt or % time),,-0.1409,-0.496,0.2143,0.4369,90,1404
+cover_total [Intermediate],flood_gs_pct_w (per unit: ppt or % time),,-0.07368,-0.1132,-0.03418,0.0002559,90,1404
+cover_total [Brackish],sal_gs_mean_w (per unit: ppt or % time),,-0.1424,-0.4317,0.1468,0.3346,87,1424
+cover_total [Brackish],flood_gs_pct_w (per unit: ppt or % time),,-0.06508,-0.1043,-0.02584,0.001152,87,1424
+cover_total [Saline],sal_gs_mean_w (per unit: ppt or % time),,-0.8093,-1.067,-0.5516,7.48e-10,79,1388
+cover_total [Saline],flood_gs_pct_w (per unit: ppt or % time),,-0.1032,-0.161,-0.04536,0.0004688,79,1388

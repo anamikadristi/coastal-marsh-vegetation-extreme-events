@@ -1,0 +1,8 @@
+marsh_type,n_sites,mean_ndvi_anom,sd_ndvi_anom,spearman_r_vs_station_tmin,p,ols_slope_per_1C_warmer,ci_low,ci_high
+Freshwater,75,-0.0380,0.0498,-0.0061,0.9584,,,
+Intermediate,94,-0.0554,0.0534,0.2309,0.0252,,,
+Brackish,91,-0.0579,0.0639,0.4137,0.0000,,,
+Saline,71,-0.0239,0.0539,0.1256,0.2968,,,
+All,331,-0.0454,0.0572,0.2934,0.0000,,,
+"All, OLS adjusted for marsh type",331,,,,0.0000,0.0060,0.0034,0.0086
+"All, OLS adjusted for marsh type and 2020 wind class",331,,,,0.0000,0.0059,0.0033,0.0086

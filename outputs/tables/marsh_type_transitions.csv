@@ -1,0 +1,5 @@
+marsh_type_base,Freshwater,Intermediate,Brackish,Saline,n_sites,pct_saltier,pct_fresher
+Freshwater,70,6,0,0,76,7.9,0.0
+Intermediate,15,70,5,1,91,6.6,16.5
+Brackish,2,51,25,9,87,10.3,60.9
+Saline,0,2,8,68,78,0.0,12.8

@@ -1,0 +1,813 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Anamika Dristi</origin>
+        <pubdate>20261024</pubdate>
+        <title>CRMS herbaceous marsh vegetation, hydrology, extreme-event exposure and MODIS NDVI by site and year, coastal Louisiana, 2006-2025</title>
+        <geoform>tabular digital data</geoform>
+        <onlink>https://github.com/anamikadristi/coastal-marsh-vegetation-extreme-events</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>One row per Coastwide Reference Monitoring System (CRMS) herbaceous marsh site and survey year (6439 rows, 341 sites, 2006-2025). Each row combines plot vegetation summaries (total cover, species richness, halophyte cover share, a salinity index from species composition, black mangrove presence) with April-September salinity and flooding from CRMS continuous recorders, MODIS NDVI within 1 km, nClimDiv drought indices, HURDAT2 hurricane exposure and February 2021 freeze minimum temperature. It is an independent derived product built from public data.</abstract>
+      <purpose>To study how Louisiana coastal marsh vegetation responds to hurricanes, the February 2021 freeze and the 2022-2023 drought, and how vegetation relates to salinity, flooding and satellite greenness, by marsh type.</purpose>
+      <supplinf>Associations only; the dataset supports observational analyses and does not establish causes. Code and documentation: scripts/ and docs/METADATA_NOTES.md in the repository.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20060731</begdate>
+          <enddate>20251022</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>As needed</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-93.8253</westbc>
+        <eastbc>-89.1345</eastbc>
+        <northbc>30.3894</northbc>
+        <southbc>29.0377</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+        <themekey>environment</themekey>
+        <themekey>inlandWaters</themekey>
+        <themekey>climatologyMeteorologyAtmosphere</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>coastal wetlands</themekey>
+        <themekey>marsh vegetation</themekey>
+        <themekey>CRMS</themekey>
+        <themekey>hurricanes</themekey>
+        <themekey>freeze</themekey>
+        <themekey>drought</themekey>
+        <themekey>salinity</themekey>
+        <themekey>flooding duration</themekey>
+        <themekey>NDVI</themekey>
+        <themekey>MODIS</themekey>
+        <themekey>resistance</themekey>
+        <themekey>recovery</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Louisiana</placekey>
+        <placekey>northern Gulf coast</placekey>
+        <placekey>Mississippi River Delta</placekey>
+        <placekey>Chenier Plain</placekey>
+      </place>
+      <temporal>
+        <tempkt>None</tempkt>
+        <tempkey>2006-2025</tempkey>
+        <tempkey>2008</tempkey>
+        <tempkey>2012</tempkey>
+        <tempkey>2020</tempkey>
+        <tempkey>2021</tempkey>
+        <tempkey>2022</tempkey>
+        <tempkey>2023</tempkey>
+        <tempkey>2024</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>None for this derived product. Source data keep their terms: CPRA CIMS data are provided for general informational purposes and CPRA asks that users acquire the data from CPRA; NOAA and NASA data are public domain. Cite the original sources listed in the lineage.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Anamika Dristi</cntper>
+        </cntperp>
+        <cntpos>Independent researcher</cntpos>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <city>Not provided</city>
+          <state>Not provided</state>
+          <postal>Not provided</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>Not provided; contact by email</cntvoice>
+        <cntemail>anamikadristi@gmail.com</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <native>Python 3 (pandas, statsmodels, rasterio, geopandas); scripts in the repository</native>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Vegetation values are as reported by CRMS field crews (visual cover estimates on 4 m2 plots). Hydrologic summaries depend on recorder completeness; site-years with fewer than 90 valid growing-season days are left blank. NDVI is a 250 m, 16-day composite and mixes marsh, water and other cover within 1 km. Storm exposure is from best-track positions and wind radii, not modeled or measured site winds. Freeze temperature is from the nearest of five GHCN stations, up to 120 km away.</attraccr>
+    </attracc>
+    <logic>Each row is unique by site and year. Percent values are within 0-100 and proportions within 0-1. Missing values are empty fields. Checked by the pipeline before writing.</logic>
+    <complete>341 sites; vegetation for all rows; salinity for 5686 rows, flooding for 4950, NDVI for 5728, salinity index for 6357. Swamp (forested) sites are excluded. A CRMS Floristic Quality Index could not be computed because the species coefficient of conservatism list was not available from a keyless source at build time.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Coordinates are the mean of the plot coordinates in the CPRA export; positional accuracy is not stated by the source.</horizpar>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Coastal Protection and Restoration Authority of Louisiana (CPRA)</origin>
+            <pubdate>Unknown</pubdate>
+            <title>CRMS herbaceous marsh vegetation (CRMS_Marsh_Vegetation.zip)</title>
+            <onlink>https://cims.coastal.la.gov/RequestedDownloads/ZippedFiles/CRMS_Marsh_Vegetation.zip</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2006</begdate>
+              <enddate>2025</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>CRMS_VEG</srccitea>
+        <srccontr>Species percent cover, community and plot coordinates.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Coastal Protection and Restoration Authority of Louisiana (CPRA)</origin>
+            <pubdate>Unknown</pubdate>
+            <title>CRMS continuous hourly hydrographic data (CRMS_Continuous_Hydrographic.zip)</title>
+            <onlink>https://cims.coastal.la.gov/RequestedDownloads/ZippedFiles/CRMS_Continuous_Hydrographic.zip</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2006</begdate>
+              <enddate>2025</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>CRMS_HYDRO</srccitea>
+        <srccontr>Hourly salinity and water elevation relative to the marsh surface.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>NOAA National Hurricane Center</origin>
+            <pubdate>Unknown</pubdate>
+            <title>Atlantic hurricane database (HURDAT2)</title>
+            <onlink>https://www.nhc.noaa.gov/data/hurdat/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2008</begdate>
+              <enddate>2024</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>HURDAT2</srccitea>
+        <srccontr>Best-track positions, intensity and wind radii.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>NOAA National Centers for Environmental Information</origin>
+            <pubdate>Unknown</pubdate>
+            <title>Global Historical Climatology Network - Daily (GHCN-Daily)</title>
+            <onlink>https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2021</begdate>
+              <enddate>2021</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>GHCND</srccitea>
+        <srccontr>Daily minimum temperature.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>NOAA National Centers for Environmental Information</origin>
+            <pubdate>Unknown</pubdate>
+            <title>nClimDiv climate division data (PDSI, SPI-6, precipitation)</title>
+            <onlink>https://www.ncei.noaa.gov/monitoring-content/data/us/climdiv/monthly/current/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2006</begdate>
+              <enddate>2025</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>NCLIMDIV</srccitea>
+        <srccontr>Monthly divisional drought indices and precipitation.</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>NASA LP DAAC (served by Microsoft Planetary Computer)</origin>
+            <pubdate>Unknown</pubdate>
+            <title>MODIS/Terra Vegetation Indices 16-Day L3 Global 250m SIN Grid V061 (MOD13Q1)</title>
+            <onlink>https://planetarycomputer.microsoft.com/dataset/modis-13Q1-061</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>online</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2006</begdate>
+              <enddate>2025</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccitea>MOD13Q1</srccitea>
+        <srccontr>16-day NDVI and pixel reliability.</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Downloaded the public inputs without accounts or keys (scripts/01_download_data.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Reduced the hourly CRMS hydrographic export to station-day salinity, water level relative to the marsh surface and flooded fraction, requiring 12 or more valid hours per day (scripts/02_build_hydro_daily.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Selected herbaceous marsh plots (Freshwater, Intermediate, Brackish, Saline; years 2006-2025), coded cover classes (&lt;1 as 0.5, Solitary as 0.1) and summarised plots to site-years (scripts/03_vegetation_site_year.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Summarised hydrology by site for April-September, requiring 90 or more valid days (scripts/04_hydro_growing_season.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Computed hurricane, freeze and drought exposure for each site from HURDAT2, GHCN-Daily and nClimDiv (scripts/05_event_exposure.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Read MOD13Q1 NDVI windows at 1 km site buffers from Microsoft Planetary Computer and kept good or marginal pixels (scripts/06_modis_ndvi.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Joined all inputs, derived the baseline marsh type, salinity index and growing-season NDVI, and wrote the site-year CSV (scripts/07_build_site_year_dataset.py).</procdesc>
+        <procdate>20261024</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>Entity point</sdtstype>
+        <ptvctcnt>6439</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>0.0001</latres>
+        <longres>0.0001</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>crms_marsh_site_year.csv</enttypl>
+        <enttypd>Comma-separated table, one row per CRMS herbaceous marsh site and vegetation survey year.</enttypd>
+        <enttypds>Anamika Dristi</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>site</attrlabl>
+        <attrdef>CRMS site identifier (first eight characters of the CRMS station ID).</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <udom>Text identifier or date; see definition.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>year</attrlabl>
+        <attrdef>Vegetation survey year.</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2006</rdommin>
+            <rdommax>2025</rdommax>
+            <attrunit>year</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>survey_date</attrlabl>
+        <attrdef>Median collection date of the site's vegetation plots in that year (YYYY-MM-DD).</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <udom>Text identifier or date; see definition.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lat</attrlabl>
+        <attrdef>Mean latitude of the site's vegetation plots, decimal degrees.</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>29.04</rdommin>
+            <rdommax>30.39</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lon</attrlabl>
+        <attrdef>Mean longitude of the site's vegetation plots, decimal degrees.</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-93.83</rdommin>
+            <rdommax>-89.13</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>marsh_type_base</attrlabl>
+        <attrdef>Baseline marsh type: modal CRMS community in the site's first three survey years.</attrdef>
+        <attrdefs>Derived from CPRA CIMS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Brackish</edomv>
+            <edomvd>CRMS community type: Brackish</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Freshwater</edomv>
+            <edomvd>CRMS community type: Freshwater</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Intermediate</edomv>
+            <edomvd>CRMS community type: Intermediate</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Saline</edomv>
+            <edomvd>CRMS community type: Saline</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>marsh_type_year</attrlabl>
+        <attrdef>Modal CRMS community recorded at the site's plots in this year.</attrdef>
+        <attrdefs>CPRA CIMS</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Brackish</edomv>
+            <edomvd>CRMS community type: Brackish</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Freshwater</edomv>
+            <edomvd>CRMS community type: Freshwater</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Intermediate</edomv>
+            <edomvd>CRMS community type: Intermediate</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Saline</edomv>
+            <edomvd>CRMS community type: Saline</edomvd>
+            <edomvds>CPRA CIMS</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>n_plots</attrlabl>
+        <attrdef>Number of 4 m2 herbaceous vegetation plots surveyed at the site in the year.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>5</rdommin>
+            <rdommax>20</rdommax>
+            <attrunit>count</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cover_total</attrlabl>
+        <attrdef>Mean total vegetation cover of the plots.</attrdef>
+        <attrdefs>CPRA CIMS (% Cover Total)</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>richness_plot</attrlabl>
+        <attrdef>Mean number of species recorded inside a plot.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>21.3</rdommax>
+            <attrunit>species per plot</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_richness</attrlabl>
+        <attrdef>Number of species recorded inside any plot at the site in the year.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>52</rdommax>
+            <attrunit>species</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>halo_share</attrlabl>
+        <attrdef>Mean plot share of summed species cover from halophytes (list in docs/METADATA_NOTES.md), 0 to 1.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1</rdommax>
+            <attrunit>proportion</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>salinity_index</attrlabl>
+        <attrdef>Community-weighted mean of species salinity optima (weighted averaging on CRMS growing-season salinity).</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.2494</rdommin>
+            <rdommax>20.71</rdommax>
+            <attrunit>ppt</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>avicennia_present</attrlabl>
+        <attrdef>True if Avicennia germinans was recorded in or next to any plot at the site.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>True</edomv>
+            <edomvd>Condition met</edomvd>
+            <edomvds>Anamika Dristi</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>False</edomv>
+            <edomvd>Condition not met</edomvd>
+            <edomvds>Anamika Dristi</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>avicennia_cover</attrlabl>
+        <attrdef>Mean in-plot cover of Avicennia germinans across the site's plots.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>80.9</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sal_gs_mean</attrlabl>
+        <attrdef>Mean daily surface-water salinity, April to September, CRMS continuous recorders at the site.</attrdef>
+        <attrdefs>Derived from CPRA CIMS hydrographic data</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.032</rdommin>
+            <rdommax>32.1</rdommax>
+            <attrunit>ppt</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sal_gs_p95</attrlabl>
+        <attrdef>95th percentile of daily salinity, April to September.</attrdef>
+        <attrdefs>Derived from CPRA CIMS hydrographic data</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0526</rdommin>
+            <rdommax>74.75</rdommax>
+            <attrunit>ppt</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>flood_gs_pct</attrlabl>
+        <attrdef>Percent of valid hours, April to September, with water above the marsh surface.</attrdef>
+        <attrdefs>Derived from CPRA CIMS hydrographic data</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wlm_gs_mean</attrlabl>
+        <attrdef>Mean water elevation relative to the marsh surface, April to September.</attrdef>
+        <attrdefs>Derived from CPRA CIMS hydrographic data</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.937</rdommin>
+            <rdommax>2.648</rdommax>
+            <attrunit>feet</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ndvi_gs_mean</attrlabl>
+        <attrdef>Mean April-September MODIS MOD13Q1 NDVI of good or marginal land pixels within 1 km.</attrdef>
+        <attrdefs>Derived from NASA LP DAAC MOD13Q1 v061 via Microsoft Planetary Computer</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0081</rdommin>
+            <rdommax>0.82</rdommax>
+            <attrunit>NDVI</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ndvi_pixels_total</attrlabl>
+        <attrdef>Number of 250 m MODIS pixels whose centers fall within 1 km of the site.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>56</rdommin>
+            <rdommax>62</rdommax>
+            <attrunit>count</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ndvi_pixels_land</attrlabl>
+        <attrdef>Pixels kept after removing those with all-years median June-September NDVI below 0.2.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>62</rdommax>
+            <attrunit>count</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>climdiv</attrlabl>
+        <attrdef>NOAA nClimDiv Louisiana climate division number joined to the site.</attrdef>
+        <attrdefs>NOAA NCEI nClimDiv</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>6</rdommin>
+            <rdommax>9</rdommax>
+            <attrunit>division</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>pdsi_gs_mean</attrlabl>
+        <attrdef>Mean April-September Palmer Drought Severity Index for the climate division.</attrdef>
+        <attrdefs>NOAA NCEI nClimDiv</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-4.473</rdommin>
+            <rdommax>4.72</rdommax>
+            <attrunit>index</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>precip_gs_in</attrlabl>
+        <attrdef>Total April-September precipitation for the climate division.</attrdef>
+        <attrdefs>NOAA NCEI nClimDiv</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>20.24</rdommin>
+            <rdommax>63.5</rdommax>
+            <attrunit>inches</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>spi6_sep</attrlabl>
+        <attrdef>Six-month Standardized Precipitation Index ending in September.</attrdef>
+        <attrdefs>NOAA NCEI nClimDiv</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-2.19</rdommin>
+            <rdommax>3.09</rdommax>
+            <attrunit>index</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>storm_name</attrlabl>
+        <attrdef>Study hurricane of that year with the largest wind proxy at the site (blank if none).</attrdef>
+        <attrdefs>NOAA NHC HURDAT2</attrdefs>
+        <attrdomv>
+          <udom>Text identifier or date; see definition.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>storm_min_dist_km</attrlabl>
+        <attrdef>Closest approach of that storm's track to the site.</attrdef>
+        <attrdefs>Derived from HURDAT2</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.67</rdommin>
+            <rdommax>303.2</rdommax>
+            <attrunit>kilometers</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>storm_wind_class_kt</attrlabl>
+        <attrdef>Highest HURDAT2 wind-radius class (0, 34, 50, 64 kt) whose quadrant radius reached the site.</attrdef>
+        <attrdefs>Derived from HURDAT2</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>64</rdommax>
+            <attrunit>knots</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>storm_wind_proxy_kt</attrlabl>
+        <attrdef>Rough wind exposure index: Vmax times min(1, (40 km / distance)^0.5).</attrdef>
+        <attrdefs>Derived from HURDAT2</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>21.49</rdommin>
+            <rdommax>130</rdommax>
+            <attrunit>knots</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>storm_before_survey</attrlabl>
+        <attrdef>True if the storm's closest approach came before the year's survey date.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>True</edomv>
+            <edomvd>Condition met</edomvd>
+            <edomvds>Anamika Dristi</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>False</edomv>
+            <edomvd>Condition not met</edomvd>
+            <edomvds>Anamika Dristi</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>freeze_ghcn_id</attrlabl>
+        <attrdef>GHCN-Daily station nearest to the site used for the February 2021 freeze.</attrdef>
+        <attrdefs>NOAA NCEI GHCN-Daily</attrdefs>
+        <attrdomv>
+          <udom>Text identifier or date; see definition.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>freeze_ghcn_dist_km</attrlabl>
+        <attrdef>Distance from the site to that station.</attrdef>
+        <attrdefs>Derived</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>5.7</rdommin>
+            <rdommax>120.2</rdommax>
+            <attrunit>kilometers</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>freeze2021_tmin_c</attrlabl>
+        <attrdef>Lowest daily minimum temperature at that station, 14-20 February 2021.</attrdef>
+        <attrdefs>NOAA NCEI GHCN-Daily</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-8.8</rdommin>
+            <rdommax>-3.8</rdommax>
+            <attrunit>degrees Celsius</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Anamika Dristi</cntper>
+        </cntperp>
+        <cntpos>Independent researcher</cntpos>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <city>Not provided</city>
+          <state>Not provided</state>
+          <postal>Not provided</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>Not provided; contact by email</cntvoice>
+        <cntemail>anamikadristi@gmail.com</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>coastal-marsh-vegetation-extreme-events/data/crms_marsh_site_year.csv</resdesc>
+    <distliab>The author provides this derived dataset as is, without warranty. Users should consult the original CPRA, NOAA and NASA sources before decisions.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>CSV</formname>
+          <formcont>UTF-8 comma-separated values with a header row</formcont>
+          <transize>1.41</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://github.com/anamikadristi/coastal-marsh-vegetation-extreme-events</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20261024</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Anamika Dristi</cntper>
+        </cntperp>
+        <cntpos>Independent researcher</cntpos>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <city>Not provided</city>
+          <state>Not provided</state>
+          <postal>Not provided</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>Not provided; contact by email</cntvoice>
+        <cntemail>anamikadristi@gmail.com</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

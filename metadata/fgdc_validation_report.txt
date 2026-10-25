@@ -1,0 +1,16 @@
+FGDC CSDGM validation report, 2026-10-24
+File: metadata/crms_marsh_site_year_fgdc.xml
+Schema: FGDC-STD-001-1998 XML schema (fgdc-std-001-1998.xsd and its ten section files)
+Schema source: https://www.fgdc.gov/schemas/metadata/ (downloaded keylessly by scripts/01_download_data.py)
+
+Validator 1, lxml 6.1.3 (libxml2): VALID
+Validator 2, xmlschema 4.3.2: VALID
+Negative control 1 (metainfo removed): rejected
+Negative control 2 (progress = 'Done', not an allowed value): rejected
+
+Sections present: idinfo, dataqual, spdoinfo, spref, eainfo, distinfo, metainfo
+Lineage sources: 6; process steps: 7; attributes documented: 34 of 34 columns
+Note: schema validity checks structure and element order only. It does not check that the content is
+complete or correct; a review against the CSDGM workbook or the USGS mp tool is still advisable.
+
+USGS mp 2.9.50 (built from the official source, MD5 verified), run 2026-10-24: No errors.

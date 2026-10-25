@@ -1,0 +1,6 @@
+ghcn_id,station,lat,lon,days_with_data,tmin_min_c,days_le_0c,days_le_m4c,winters_as_cold_or_colder_2006_2026,n_winters
+USW00003937,Lake Charles Regional AP,30.13,-93.22,7,-8.80,6,2,3,21
+USW00013976,Lafayette Regional AP,30.20,-91.99,7,-8.80,7,2,3,21
+USC00163433,Galliano (cooperative station),29.46,-90.31,7,-3.90,4,0,6,16
+USW00012916,New Orleans Intl AP (MSY),30.00,-90.28,7,-3.80,3,0,8,21
+USW00053865,Slidell AP,30.34,-89.82,7,-5.50,5,3,14,21

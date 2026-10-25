@@ -1,0 +1,15 @@
+# Python 3.11 or newer (tested with 3.14)
+numpy>=2.0
+pandas>=2.2
+scipy>=1.13
+statsmodels>=0.14
+matplotlib>=3.9
+geopandas>=1.0
+shapely>=2.0
+pyproj>=3.6
+rasterio>=1.4
+pystac-client>=0.8
+planetary-computer>=1.0
+requests>=2.31
+lxml>=5.0
+xmlschema>=3.0
